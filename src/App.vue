@@ -42,7 +42,6 @@ const deleteJobResult = useMutation(`
   }
 }`);
 
-
 const removeJob = (id) => {
   const variables = {
     ID: id,
@@ -65,21 +64,22 @@ const removeJob = (id) => {
       <h1>JOBS</h1>
       <!-- for each job in our database display -->
       <div class="job" v-for="job in jobs" :key="job.id">
-        <div class="header">
           <h2>{{ job.jobRole }}</h2>
 
-          <span class="material-icons" @click="removeJob(job.id)">
-            delete
-          </span>
-        </div>
+         
         <h4>{{ job.jobUrl }}</h4>
         <p>
           {{ job.jobDescription }}
         </p>
         <h3><span class="material-icons"> map </span>{{ job.jobLocation }}</h3>
         <h3><span class="material-icons"> mail </span>{{ job.jobContact }}</h3>
-        <h3>Expires: {{ moment(job.startDate).format("Do MMMM Y") }}</h3>
-        <span>posted on {{ moment(job.createdOn).format("Do MMMM Y") }}</span>
+        <h3>Start Date: {{ moment(job.startDate).format("Do MMMM Y") }}</h3>
+        <div class="header">
+          <span>posted on {{ moment(job.createdOn).format("Do MMMM Y") }}</span>
+          <button class="icon" @click="removeJob(job.id)">
+            <span class="material-icons"> delete </span>
+          </button>
+        </div>
       </div>
     </div>
     <!-- a div to layout our form sidebar -->
@@ -97,7 +97,6 @@ const removeJob = (id) => {
 }
 .header span {
   padding: 15px;
-  font-size: 2em;
   cursor: pointer;
 }
 </style>

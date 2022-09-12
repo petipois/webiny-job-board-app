@@ -14,14 +14,13 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-span{
-  padding-bottom: 20px;
-}
+
 a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -31,6 +30,7 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -44,9 +44,9 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 2em;
   line-height: 1.1;
-  padding: 10px;
+  padding: 5px;
 }
 
 button {
@@ -60,9 +60,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -76,7 +78,7 @@ button:focus-visible {
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
-  padding:0px;
+  padding: 0px;
 }
 
 @media (prefers-color-scheme: light) {
@@ -84,9 +86,11 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
@@ -94,48 +98,73 @@ button:focus-visible {
 
 
 /**/
-.currentDate
-{
+.currentDate {
   font-size: 2em;
   text-align: right;
   color: #444;
   border-bottom: 10px solid #FFE8A3;
 }
-h1{
-  margin: 0;
+
+h2 {
+  font-size: 2em;
 }
+
+h3 {
+  color: orange;
+}
+
+label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h3 span {
+  color: black;
+}
+
+h4 {
+  font-size: 1.5em;
+  color: orange;
+}
+
 .container {
-  width:100%;
+  width: 100%;
   display: grid;
   grid-template-columns: 66% 33%;
   gap: 10px;
   padding: 0px;
-  color:#000;
+  color: #000;
   box-sizing: border-box;
   text-align: left;
-  
+
 }
-.jobs{
+
+.jobs {
   padding: 5px;
 }
-.side{
+
+.side {
   min-height: 100vh;
   padding-left: 10px;
-  background-color:#FFE8A3;
+  background-color: #FFE8A3;
 }
-.job,.jobForm {
+
+.job,
+.jobForm {
   display: inline-block;
   margin: 5px;
 }
-textarea{
+
+textarea {
   background-color: #fff;
   border-radius: 10px;
   border: none;
   margin: 5px;
-  display: block;  
+  display: block;
   color: #000;
   width: 100%;
 }
+
 input {
   background-color: #fff;
   border-radius: 10px;
@@ -147,17 +176,27 @@ input {
   padding: 10px;
   height: 1em;
 }
-button{
+
+form button {
   width: 100%;
   background-color: orange;
-  height: 4rem;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-weight: bold;
 }
-.job {  
+
+.icon:hover {
+  background-color: #FFE8A3;
+  color: #000;
+  border: none;
+}
+
+.job {
   width: 40%;
   border-radius: 10px;
   color: #000;
   background-color: #fff;
-  
+
   padding: 5px;
 }
 
@@ -167,7 +206,9 @@ button{
   .container {
     display: inline-block;
   }
-  .job{
+
+  .job {
     width: 90%;
   }
+  
 }
