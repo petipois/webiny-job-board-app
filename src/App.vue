@@ -60,13 +60,11 @@ const removeJob = (id) => {
   <div class="container">
     <!-- a div to layout all the jobs in our database -->
     <div class="jobs">
-      <h1 class="currentDate">{{ currentDate }}</h1>
+      <date class="currentDate">{{ currentDate }}</date>
       <h1>JOBS</h1>
       <!-- for each job in our database display -->
       <div class="job" v-for="job in jobs" :key="job.id">
-          <h2>{{ job.jobRole }}</h2>
-
-         
+          <h2>{{ job.jobRole }}</h2>    
         <h4>{{ job.jobUrl }}</h4>
         <p>
           {{ job.jobDescription }}

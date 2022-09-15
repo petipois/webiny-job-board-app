@@ -2,6 +2,7 @@
 import { ref } from "@vue/reactivity"; // import ref  from vue
 import { useMutation } from "@urql/vue";
 /*  Create field for job form  - corresponds to the fields we have in our Webiny CMS */
+
 const title = ref("");
 const desc = ref("");
 const jobUrl = ref("");
