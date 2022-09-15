@@ -36,11 +36,11 @@ const result = useQuery({
 /** DELETING A JOB * */
 const deleteJobResult = useMutation(`
         mutation($ID: ID!){
-  deleteJob(revision:$ID)
-  {
-    data
-  }
-}`);
+            deleteJob(revision:$ID)
+            {
+              data
+            }
+          }`);
 
 const removeJob = (id) => {
   const variables = {

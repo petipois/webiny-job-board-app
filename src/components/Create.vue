@@ -9,30 +9,35 @@ const jobUrl = ref("");
 const location = ref("");
 const contact = ref("");
 const expires = ref("");
-const jobForm = ref(null); //
 const createJobResult = useMutation(`
-mutation($title:String!, $contact:String!, $desc:String!, $location:String!, $url:String!,$expiry:Date!) {
-createJob(data:{
-	jobRole:$title
-	jobContact:$contact
-	jobDescription:$desc
-	jobLocation:$location
-	jobUrl:$url
-  startDate:$expiry
-	})
-{
-	data{
-	jobRole
-	jobDescription
-	jobContact
-	jobLocation
-	jobUrl
-  startDate
-	}
-}
-}
+mutation(
+  $title:String!, 
+  $contact:String!, 
+  $desc:String!,
+   $location:String!, 
+   $url:String!,
+   $expiry:Date!) {
 
-    `);
+createJob(data:{
+  	jobRole:$title
+    jobContact:$contact
+    jobDescription:$desc
+    jobLocation:$location
+    jobUrl:$url
+    startDate:$expiry
+	})
+  {
+    data{
+      jobRole
+      jobDescription
+      jobContact
+      jobLocation
+      jobUrl
+      startDate
+    }
+  }
+}
+`);
 
 /* * This function will take all the input from the form and push it into an object.
 Then it will push the object to the jobs array and reset all the input fields.
@@ -43,7 +48,7 @@ const checkFields = () => {
     desc.value == "" ||
     contact.value == "" ||
     jobUrl.value == "" ||
-    location.value ==""||
+    location.value == "" ||
     expires.value == ""
   ) {
     alert("Fill in the fields");
@@ -82,7 +87,7 @@ function resetFields() {
 <template>
   <h1>CREATE JOB</h1>
   <!-- Form for creating a job. This will push entered values into the CMS -->
-  <form ref="jobForm" class="jobForm" @submit.prevent="checkFields()">
+  <form class="jobForm" @submit.prevent="checkFields()">
     <label for="title">Title</label>
     <input type="text" name="title" v-model="title" />
     <label for="desc">Job Description</label>
@@ -101,6 +106,6 @@ function resetFields() {
     <input type="text" name="location" v-model="location" />
     <label for="expiry">Job Start Date</label>
     <input type="date" v-model="expires" name="expiry" />
-    <button type="submit" value="Submit">Submit</button>
+    <button type="submit" value="Submit">ADD JOB</button>
   </form>
 </template>
