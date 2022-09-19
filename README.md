@@ -1,4 +1,4 @@
-# Create a Job Board Application with Webiny & Vue JS
+# Job Board Application with Webiny, GraphQL & Vue JS
 Job board Application - Webiny CMS Tech Article
 # How to use
 - Clone the repository
